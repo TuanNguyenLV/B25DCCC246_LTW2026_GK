@@ -67,7 +67,7 @@ const App = () => {
         <Route path="products" element={<ProductList products={products} onUpdate={updateStock} onDelete={deleteProduct} />} />
         <Route path="products/new" element={<AddProduct onAdd={addProduct} />} />
         <Route path="products/:id" element={<ProductDetail products={products} />} />
-        <Route path="*" element={<div>Không tìm thấy trang</div>} />
+        <Route path="*" element={<div>Không tìm thấy tg</div>} />
       </Route>
     </Routes>
   );
