@@ -60,6 +60,9 @@ const App = () => {
     setProducts([...products, { ...newProduct, id: newId }]);
   };
 
+  if (loading) return <div>Đang tải...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -67,7 +70,7 @@ const App = () => {
         <Route path="products" element={<ProductList products={products} onUpdate={updateStock} onDelete={deleteProduct} />} />
         <Route path="products/new" element={<AddProduct onAdd={addProduct} />} />
         <Route path="products/:id" element={<ProductDetail products={products} />} />
-        <Route path="*" element={<div>Không tìm thấy tg</div>} />
+        <Route path="*" element={<div>Không tìm thấy trang</div>} />
       </Route>
     </Routes>
   );
